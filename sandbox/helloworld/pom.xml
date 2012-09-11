@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.kylin.jaxrs</groupId>
-	<artifactId>helloworld-jaxws</artifactId>
+	<groupId>com.kylin.jaxws</groupId>
+	<artifactId>jaxws-helloworld</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>Webservice - Build basic JAX-WS compatible web service</name>
-	<description>Build basic JAX-WS compatible web service</description>
+	<name>Webservice - JAX-WS compatible web service</name>
+	<description>JAX-WS compatible web service</description>
 
 
 	<url>https://github.com/kylinsoong</url>
