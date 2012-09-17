@@ -14,6 +14,8 @@ import javax.xml.ws.BindingProvider;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.handler.Handler;
 
+import org.apache.log4j.Logger;
+
 
 import com.arjuna.mw.wst11.UserTransaction;
 import com.arjuna.mw.wst11.UserTransactionFactory;
@@ -33,6 +35,8 @@ import com.kylin.jaxws.wsat.ws.RestaurantServiceATService;
  */
 @WebServlet("/WSATSimpleServletClient")
 public class WSATSimpleServletClient extends HttpServlet {
+	
+	private static final Logger logger = Logger.getLogger(WSATSimpleServletClient.class);
 
     private static final long serialVersionUID = -8314035702649252239L;
 
@@ -40,8 +44,17 @@ public class WSATSimpleServletClient extends HttpServlet {
     private RestaurantServiceAT client;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	
+    	logger.info("doGet");
+    	
+//    	handle(req, resp);
+    }
+    	
+    	protected void handle(HttpServletRequest req, HttpServletResponse resp)
+                throws ServletException, IOException {
+    	
+    	logger.info("WSAT simple Servlet Client");
         
         /*
          * Add client handler chain
