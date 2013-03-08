@@ -11,7 +11,7 @@ public class HelloWorldClient {
 	public static void main(String[] args) throws Exception {
 
 		final QName serviceName = new QName("com.kylin.jaxws.helloworld", "HelloWorldService");
-		final URL wsdlURL = new URL("http://localhost:8080/helloworld-jaxws/HelloWorldService/HelloWorldService?wsdl");
+		final URL wsdlURL = new URL("http://localhost:8080/jaxws-helloworld/HelloWorldService/HelloWorldService?wsdl");
 
 		final Service service = Service.create(wsdlURL, serviceName);
 		final HelloWorld helloworld = (HelloWorld) service.getPort(HelloWorld.class);

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kylin.jaxws</groupId>
 	<artifactId>jaxws-helloworld</artifactId>
-	<version>1.0.0</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 	<name>Webservice - JAX-WS compatible web service</name>
 	<description>JAX-WS compatible web service</description>
@@ -41,7 +41,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>helloworld-jaxws</finalName>
+		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -51,24 +51,27 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>7.3.Final</version>
+            </plugin>
+            <plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.kylin.jaxws.helloworld.client.HelloWorldClient</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Jar-Version>${project.version}</Jar-Version>
+                            <Jar-Name>${project.artifactId}</Jar-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+			</plugin>
 		</plugins>
 	</build>
 
-	<profiles>
-		<profile>
-			<id>run-client</id>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>2.3.1</version>
-						<configuration>
-							<source>1.6</source>
-							<target>1.6</target>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+
 </project>
