@@ -12,6 +12,8 @@
     <modules>
         <module>helloworld</module>
         <module>sandbox</module>
+        <module>axis2-client</module>
+        <module>test</module>
     </modules>
 
 </project>

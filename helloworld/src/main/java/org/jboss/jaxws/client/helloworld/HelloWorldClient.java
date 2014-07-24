@@ -27,10 +27,10 @@ public class HelloWorldClient {
 //		} 
 		
 		// JAX-WS Dispatch APIs
-		Dispatch<Source> disp = service.createDispatch(new QName("http://localhost:8080/jaxws-helloworld", "HelloWorldServicePort"), Source.class, Service.Mode.PAYLOAD);
+//		Dispatch<Source> disp = service.createDispatch(new QName("http://localhost:8080/jaxws-helloworld", "HelloWorldServicePort"), Source.class, Service.Mode.PAYLOAD);
 				
-		Source request = new StreamSource();
-		Source response = disp.invoke(request);
+//		Source request = new StreamSource();
+//		Source response = disp.invoke(request);
 		
 	}
 }
