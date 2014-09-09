@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jboss.jaxws</groupId>
+	<artifactId>jaxws-stateService</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>Webservice - JAX-WS compatible web service</name>
+	<description>JAX-WS compatible web service</description>
+
+
+	<url>https://github.com/kylinsoong</url>
+	<properties>
+		<cxf.version>2.6.8.redhat-7</cxf.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<version>3.0.0.Beta1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<repositories>
+		<repository>
+			<id>jboss-ga-repository</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://download.eng.bos.redhat.com/brewroot/repos/jb-ip-6-build/latest/maven/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-core</artifactId>
+			<version>2.6.8.redhat-7</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>StateService</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.3.Final</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>org.teiid.stateservice.client.StateServiceClient</mainClass>
+						</manifest>
+						<manifestEntries>
+							<Jar-Version>${project.version}</Jar-Version>
+							<Jar-Name>${project.artifactId}</Jar-Name>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

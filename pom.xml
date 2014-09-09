@@ -11,6 +11,7 @@
 
     <modules>
         <module>helloworld</module>
+        <module>stateService</module>
         <module>sandbox</module>
         <module>axis2-client</module>
         <module>test</module>
