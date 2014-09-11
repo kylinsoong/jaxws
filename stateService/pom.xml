@@ -38,6 +38,15 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>jboss-public-repository</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>https://maven.repository.redhat.com/techpreview/all/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -52,6 +61,7 @@
 			<artifactId>cxf-rt-core</artifactId>
 			<version>2.6.8.redhat-7</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

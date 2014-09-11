@@ -23,11 +23,11 @@ Deploy `StateService.jar` to a running JBoss server(Assume JBoss EAP 6 run on lo
  serviceName={http://www.teiid.org/stateService/}stateService
  portName={http://www.teiid.org/stateService/}StateServiceImplPort
  annotationWsdlLocation=null
- wsdlLocationOverride=null
+ wsdlLocationOverride=nullhttp://localhost:8080/StateService/stateService/StateServiceImpl?WSDLhttp://localhost:8080/StateService/stateService/StateServiceImpl?WSDL
  mtomEnabled=false
 ~~~
 
-WSDL File can be viewed via http://localhost:8080/StateService/stateService/StateServiceImpl?WSDL
+WSDL File can be viewed via [http://localhost:8080/StateService/stateService/StateServiceImpl?WSDL](http://localhost:8080/StateService/stateService/StateServiceImpl?WSDL)
 
 ## Consume
 
@@ -91,3 +91,5 @@ California, Sacramento, CA, 1850
 ~~~
 
 ### soapUI
+
+Refer to [http://ksoong.org/jaxws-stateservice/](http://ksoong.org/jaxws-stateservice/) soapUI section
